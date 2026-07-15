@@ -1,9 +1,64 @@
--- KURULUM TALİMATLARI --
+# KURULUM TALİMATLARI
 
-ilk önce https://console.groq.com/keys sitesine girin ve hesap açın ardından açılan pencerede "Create API Keys" tuşuna basın
-açılan yerde keyinize bir isim verin ardında explanation yerine keyin expire olacağı zamanı seçin no expire seçerseniz sonsuza kadar kullanabilirsiniz
-ardından bir yer açılacak orda API keyiniz olacak o anahtarı kopyalayın ve SAKIN AMA SAKIN Kaybetmeyin oraya sadece 1 kez girebilirsiniz
-ardından windows powershelli açın ve setx GROQ_API_KEY "Az önce kopyaladığınız anahtar" yazın ve enter basın
-ardından Spotify client idleriniz lazım olacak powershelle şu şekil yazın
-setx SPOTIFY_CLIENT_ID "client-id-buraya" ardından enter basın ve bide bunu yazın
-setx SPOTIFY_CLIENT_SECRET "client-secret-buraya" vee enter artık hazırsınız
+## 1. Gerekli Kütüphaneleri Kurun
+
+İndirdiğiniz klasörü açın. Klasörün boş bir yerine **Shift + Sağ Tık** yaparak **"Terminalde Aç"** (veya **"PowerShell Penceresini Burada Aç"**) seçeneğine tıklayın.
+
+Ardından aşağıdaki komutu çalıştırın:
+
+```bash
+pip install -r requirements.txt
+```
+
+> **Not:** Bilgisayarınızda **Python** yüklü olmalı ve kurulum sırasında **"Add Python to PATH"** seçeneği işaretlenmiş olmalıdır. Komut tamamlandıktan sonra gerekli tüm kütüphaneler otomatik olarak yüklenecektir.
+
+---
+
+## 2. Groq API Anahtarı Oluşturun
+
+1. https://console.groq.com/keys adresine gidin.
+2. Hesabınıza giriş yapın veya yeni bir hesap oluşturun.
+3. **Create API Key** butonuna tıklayın.
+4. API anahtarınıza istediğiniz bir isim verin.
+5. **Expiration** bölümünden anahtarın ne zaman sona ereceğini seçin. Süresiz kullanmak istiyorsanız **No Expire** seçeneğini seçebilirsiniz.
+6. Oluşturulan **API Key**'i kopyalayın.
+
+> ⚠️ **Önemli:** API anahtarı yalnızca **bir kez** görüntülenir. Kaybederseniz tekrar görüntüleyemezsiniz ve yeni bir anahtar oluşturmanız gerekir.
+
+---
+
+## 3. Groq API Anahtarını Sisteme Tanıtın
+
+Windows **PowerShell**'i açın ve aşağıdaki komutu çalıştırın:
+
+```powershell
+setx GROQ_API_KEY "BURAYA_API_ANAHTARINIZI_YAPIŞTIRIN"
+```
+
+Komutu çalıştırdıktan sonra **Enter** tuşuna basın.
+
+---
+
+## 4. Spotify API Bilgilerini Ekleyin
+
+Spotify entegrasyonunu kullanabilmek için **Spotify Client ID** ve **Spotify Client Secret** bilgilerine ihtiyacınız vardır.
+
+PowerShell'de aşağıdaki komutları sırasıyla çalıştırın:
+
+```powershell
+setx SPOTIFY_CLIENT_ID "CLIENT_ID_BURAYA"
+```
+
+```powershell
+setx SPOTIFY_CLIENT_SECRET "CLIENT_SECRET_BURAYA"
+```
+
+Her komuttan sonra **Enter** tuşuna basmayı unutmayın.
+
+---
+
+## 5. Kurulum Tamamlandı
+
+Tüm adımları doğru şekilde tamamladıysanız uygulama kullanıma hazırdır.
+
+> **Not:** Ortam değişkenlerinin (API anahtarlarının) algılanması için açık olan Terminal, PowerShell veya Komut İstemi pencerelerini kapatıp yeniden açmanız gerekebilir. Bazı durumlarda bilgisayarı yeniden başlatmanız da gerekebilir.
