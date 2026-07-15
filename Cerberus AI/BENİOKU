@@ -1,0 +1,9 @@
+-- KURULUM TALİMATLARI --
+
+ilk önce https://console.groq.com/keys sitesine girin ve hesap açın ardından açılan pencerede "Create API Keys" tuşuna basın
+açılan yerde keyinize bir isim verin ardında explanation yerine keyin expire olacağı zamanı seçin no expire seçerseniz sonsuza kadar kullanabilirsiniz
+ardından bir yer açılacak orda API keyiniz olacak o anahtarı kopyalayın ve SAKIN AMA SAKIN Kaybetmeyin oraya sadece 1 kez girebilirsiniz
+ardından windows powershelli açın ve setx GROQ_API_KEY "Az önce kopyaladığınız anahtar" yazın ve enter basın
+ardından Spotify client idleriniz lazım olacak powershelle şu şekil yazın
+setx SPOTIFY_CLIENT_ID "client-id-buraya" ardından enter basın ve bide bunu yazın
+setx SPOTIFY_CLIENT_SECRET "client-secret-buraya" vee enter artık hazırsınız
